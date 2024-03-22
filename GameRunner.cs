@@ -79,6 +79,41 @@ public class GameRunner : MonoBehaviour
     void Start()
     {
         // set the gameobjects array with GameObject.Find(loop through names array)
+        for (int i = 0; i < pieceNames.Length; i++)
+        {
+            int calcCoordRow = 0;
+            int calcCoordCol = 0;
+
+            if (i % 8 == 0)
+            {
+                calcCoordRow = (i + 1) / 8;
+                calcCoordCol = 0;
+            }
+            else
+            {
+                calcCoordRow = (i / 8);
+                calcCoordCol = i % 8;
+            }
+
+            if (GameObject.Find(pieceNames[i]) != null)
+            {
+                Debug.Log("Row: " + calcCoordRow);
+                Debug.Log("Col: " + calcCoordCol);
+                boardPositions[calcCoordRow, calcCoordCol] = GameObject.Find(pieceNames[i]);
+            }
+            else
+            {
+                boardPositions[calcCoordRow, calcCoordCol] = null;
+            }
+
+            for (int row = 0; row < 8; row++)
+            {
+                for (int col = 0; col < 8; col++)
+                {
+                    Debug.Log(boardPositions[row, col].name);
+                }
+            }
+        }
     }
 
     // Update is called once per frame
