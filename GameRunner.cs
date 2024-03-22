@@ -110,7 +110,14 @@ public class GameRunner : MonoBehaviour
             {
                 for (int col = 0; col < 8; col++)
                 {
-                    Debug.Log(boardPositions[row, col].name);
+                    if (boardPositions[row, col] != null)
+                    {
+                        Debug.Log(boardPositions[row, col].name);
+                    }
+                    else
+                    {
+                        Debug.Log("Empty");
+                    }
                 }
             }
         }
