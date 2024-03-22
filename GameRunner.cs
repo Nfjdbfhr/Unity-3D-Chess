@@ -105,22 +105,22 @@ public class GameRunner : MonoBehaviour
             {
                 boardPositions[calcCoordRow, calcCoordCol] = null;
             }
+        }
 
-            for (int row = 0; row < 8; row++)
+        for (int row = 0; row < 8; row++)
+        {
+            for (int col = 0; col < 8; col++)
             {
-                for (int col = 0; col < 8; col++)
+                if (boardPositions[row, col] != null)
                 {
-                    if (boardPositions[row, col] != null)
-                    {
-                        Debug.Log(boardPositions[row, col].name);
-                    }
-                    else
-                    {
-                        Debug.Log("Empty");
-                    }
+                    Debug.Log(boardPositions[row, col].name);
+                }
+                else
+                {
+                    Debug.Log("Empty");
                 }
             }
-        }
+        }    
     }
 
     // Update is called once per frame
