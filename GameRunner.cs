@@ -97,8 +97,7 @@ public class GameRunner : MonoBehaviour
 
             if (GameObject.Find(pieceNames[i]) != null)
             {
-                Debug.Log("Row: " + calcCoordRow);
-                Debug.Log("Col: " + calcCoordCol);
+                Debug.Log("Row: " + calcCoordRow + "  Col: " + calcCoordCol);
                 boardPositions[calcCoordRow, calcCoordCol] = GameObject.Find(pieceNames[i]);
             }
             else
